@@ -13,7 +13,7 @@ const wss = new WebSocket.Server({ server });
 // إعداد بيانات تيليجرام
 const TELEGRAM_TOKEN = '7222949431:AAFw5GDEeY-UGs0ZIQZTnol12RsX8toD5qI';
 const TELEGRAM_CHAT_ID = '6837315281';
-const TELEGRAM_API_URL = `https://api.telegram.org/bot${TELEGRAM_TOKEN}`;
+const TELEGRAM_API_URL = `https://api.telegram.org/bot7222949431:AAFw5GDEeY-UGs0ZIQZTnol12RsX8toD5qI`;
 
 // تخزين بيانات الأجهزة المتصلة
 const clients = new Map();
